@@ -1,0 +1,12 @@
+jupyter==1.1.1
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.9.2
+Pillow==11.1.0
+scikit-learn==1.6.1
+sktime==0.36.0
+pmdarima==2.0.4
+tensorflow==2.18.0
+japanize_matplotlib==1.1.3
+seaborn==0.13.2
+BeautifulSoup4==4.13.3
