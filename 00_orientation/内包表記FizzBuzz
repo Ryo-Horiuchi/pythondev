@@ -1,0 +1,38 @@
+nums = []
+
+for n in range(1, 101):
+
+    result = str(n)
+
+    if  n % 15 == 0:
+        result = "FizzBuzz"
+
+    elif n % 5 == 0:
+        result = "Buzz"
+
+    elif n % 3 == 0:
+        result = "Fizz"
+
+    nums.append(result)
+
+print(nums)
+
+
+#結果一覧　は　空っぽ
+
+#繰り返す　現在の数字を　１個ずつ　範囲は　１から１００まで
+
+    #結果は　文字列に変換した 現在の数字
+
+    #もし　現在の数字が　１５で割り切れるなら
+        # 結果は　FizzBuzz
+
+    #そうでなく、もし　現在の数字が　５で割り切れるなら
+        # 結果は　Buzz
+
+    #そうでなく、もし　現在の数字が　３で割り切れるなら
+        # 結果は　Fizz
+
+    #結果一覧に　追加する　結果を
+
+#表示する　結果一覧を

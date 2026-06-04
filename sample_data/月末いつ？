@@ -1,0 +1,29 @@
+from datetime import date, timedelta
+
+def get_notification_days(year, month):
+    # 翌月1日を作る
+    if month == 12:
+        next_month_first = date(year + 1, 1, 1)
+    else:
+        next_month_first = date(year, month + 1, 1)
+
+    # 月末日
+    target_day = next_month_first - timedelta(days=1)
+
+    # 土日なら、平日まで戻る
+    while target_day.weekday() >= 5:
+        target_day -= timedelta(days=1)
+
+    # 翌月1日から何日前か
+    days_before = (next_month_first - target_day).days
+
+    return target_day, days_before
+
+
+year = int(input("年を入力してください："))
+month = int(input("月を入力してください："))
+
+target_day, days_before = get_notification_days(year, month)
+
+print(f"{year}年{month}月の通知日は {target_day} です")
+print(f"毎月1日の予定には {days_before}日前 通知を設定します")
