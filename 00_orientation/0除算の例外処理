@@ -1,0 +1,15 @@
+try:  #ベースのコード
+
+  a=float(input("割られる数を入力してください："))
+  b=float(input("割る数を入力してください："))
+
+  c=a/b
+  print(f"{a} ÷ {b} = {c}")
+
+except ValueError:  #数値以外の処理
+  print("エラー：数値を入力してください")
+
+except ZeroDivisionError:  #0除算の処理
+  print("エラー：0で割り算しないでください")
+
+print("処理を終了します")
