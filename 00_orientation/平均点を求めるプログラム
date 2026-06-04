@@ -1,0 +1,16 @@
+score=0 #点数
+total=0 #合計
+count=0 #人数
+
+while True :
+  score = int(input("点数を入力してください："))
+
+  if score == -1 :
+      break
+
+  total += score
+  count += 1
+
+  average = total / count
+
+print(f"{count}人のテストの平均点は{average:.1f}点です")
