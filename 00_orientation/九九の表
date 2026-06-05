@@ -1,0 +1,19 @@
+#@title 九九のリストを作成する
+
+list_9x9 = []
+  
+for y in range(1,10): 
+    row = []
+
+    for x in range(1,10):
+        row.append(x * y)
+        
+    list_9x9.append(row)
+
+
+#@title 九九の表を表示する
+
+for row in list_9x9 :
+    for n in row :
+        print(f"{n:3d}", end="")
+    print()
