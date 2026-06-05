@@ -1,0 +1,33 @@
+#入力された英単語を保存するリスト
+words = []
+
+#アルファベットと、出現回数を保存する辞書
+char_count = {
+  'a':0, 'b':0, 'c':0, 'd':0, 'e':0,'f':0, 'g':0, 
+  'h':0, 'i':0, 'j':0,'k':0, 'l':0, 'm':0, 'n':0, 
+  'o':0,'p':0, 'q':0, 'r':0, 's':0, 't':0,'u':0, 
+  'v':0, 'w':0, 'x':0, 'y':0,'z':0}
+
+#英単語の入力を繰り返す　スペースが入力されたら終了
+while True:
+    word = input("英単語を入力してください: ")
+
+    if word == "":
+        break
+
+    words.append(word)
+
+#入力された英単語をアルファベット順に並べて表示
+print("入力した英単語:", sorted(words))
+
+#各単語文字を数える
+for word in words:
+    for char in word:
+        if char in char_count:
+            char_count[char] += 1
+
+#一個以上あった文字だけ表示
+for char, count in char_count.items():
+    if count > 0:
+        print(f"{char}が{count}個ありました")
+        
