@@ -1,0 +1,5 @@
+import fibonacci
+
+n = int(input("何番目の数値を求めますか？:"))
+
+print(fibonacci.fibo(n))
