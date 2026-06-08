@@ -1,0 +1,39 @@
+class Baseball_Team :
+
+    def __init__(self, name, win, lose, draw) :
+        self.name = name
+        self.win  = win
+        self.lose = lose
+        self.draw = draw
+
+    def calc_win_rate(self):
+        return self.win / (self.win + self.lose)
+
+    def show_team_result(self):
+        win_rate = self.calc_win_rate()
+        print(
+            f"{self.name:<10}"
+            f"{self.win:<5}"
+            f"{self.lose:<5}"
+            f"{self.draw:<5}"
+            f"{win_rate:.3f}"
+        )
+
+
+archers = Baseball_Team("Archers", 77, 64, 2)
+archers.show_team_result()
+
+meteors = Baseball_Team("Meteors",71,69,3)
+meteors.show_team_result()
+
+cheetahs = Baseball_Team("Cheetahs",69,68,6)
+cheetahs.show_team_result()
+
+sharks = Baseball_Team("Sharks",70,70,3)
+sharks.show_team_result()
+
+pythons = Baseball_Team("Pythons",68,73,2)
+pythons.show_team_result()
+
+owls = Baseball_Team("Owlss",59,82,2)
+owls.show_team_result()
