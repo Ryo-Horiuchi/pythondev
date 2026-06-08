@@ -20,20 +20,15 @@ class Baseball_Team :
         )
 
 
-archers = Baseball_Team("Archers", 77, 64, 2)
-archers.show_team_result()
+teams = [
+    Baseball_Team("Archers", 77, 64, 2),
+    Baseball_Team("Meteors", 71, 69, 3),
+    Baseball_Team("Cheetahs", 69, 68, 6),
+    Baseball_Team("Sharks", 70, 70, 3),
+    Baseball_Team("Pythons", 68, 73, 2),
+    Baseball_Team("Owls", 59, 82, 2)
+]
 
-meteors = Baseball_Team("Meteors",71,69,3)
-meteors.show_team_result()
-
-cheetahs = Baseball_Team("Cheetahs",69,68,6)
-cheetahs.show_team_result()
-
-sharks = Baseball_Team("Sharks",70,70,3)
-sharks.show_team_result()
-
-pythons = Baseball_Team("Pythons",68,73,2)
-pythons.show_team_result()
-
-owls = Baseball_Team("Owlss",59,82,2)
-owls.show_team_result()
+for team in teams:
+    team.show_team_result()
+    
