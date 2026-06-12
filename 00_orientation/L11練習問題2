@@ -1,0 +1,11 @@
+import numpy as np
+
+d = np.zeros((9,9))
+
+d = d.astype(np.int8)
+
+for i in range(9):
+    for j in range(9):
+        d[i,j] = (i + 1) * (j + 1)
+
+print(d)
