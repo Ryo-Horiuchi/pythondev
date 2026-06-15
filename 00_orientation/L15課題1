@@ -1,0 +1,94 @@
+# Pandasを使ってbreast_cancer_wisconsin_data.csvを読み込む（変更しないでください）
+import pandas as pd
+bc_data = pd.read_csv("breast_cancer_wisconsin_data.csv")
+
+
+# 読み込んだデータが何行何列かをshapeで確認する（変更しないでください）
+print(bc_data.shape)
+
+
+# 読み込んだデータの先頭5行を確認する（変更しないでください）
+bc_data.head()
+
+
+# 読み込んだデータの先頭の1行だけを確認する（変更しないでください）
+bc_data.iloc[0, :]
+
+
+# スライスとndarrayへの変換をして X と y を作成する
+# （以下にコードを書いてください）
+X = bc_data[["radius_mean","perimeter_mean"]].values
+y = bc_data["diagnosis"].values
+
+
+# カテゴリ値の数値化
+# （変更しないでください）
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+le.fit(["B", "M"])    # 良性：0, 悪性：1
+y = le.transform(y)
+
+
+# 数値化した状態を確認してみる（変更しないでください）
+y
+
+
+# 訓練データ8割、テストデータ2割に分割する
+# （以下にコードを書いてください）
+from sklearn.model_selection import train_test_split
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    shuffle=True
+)
+
+
+# SVCの線形分類モデルを作成する
+# （以下にコードを書いてください）
+from sklearn.svm import SVC
+
+model = SVC(kernel="linear")
+
+
+# 訓練データを使って訓練を行なう
+# （以下にコードを書いてください）
+model.fit(X_train, y_train)      # 訓練
+y_pred = model.predict(X_test)   # 予測
+
+
+# テストデータを使って分類を実行する
+# （以下にコードを書いてください）
+y_pred = model.predict(X_test)
+
+
+# 予測値を表示する
+# （以下にコードを書いてください）
+print(y_pred)
+
+
+# 実際の値を表示する
+# （以下にコードを書いてください）
+print(y_test)
+
+
+# 混同行列で集計結果を表示する
+# （以下にコードを書いてください）
+from sklearn.metrics import confusion_matrix
+
+print(confusion_matrix(y_test, y_pred))
+
+
+# classification_report()の実行結果を表示する
+# （以下にコードを書いてください）
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_pred))
+
+
+# 正解率 86%
+# 悪性を良性と誤判定した件数 13件
+# 悪性のrecall 0.70
