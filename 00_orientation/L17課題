@@ -62,7 +62,7 @@ model.compile(optimizer="adam",
 
 
 # fit
-model.fit(train_dataset, epochs=20)
+model.fit(train_dataset, epochs=5)
 
 
 # evaluate
